@@ -38,7 +38,7 @@ hello
 
 ###Naming Structure
 
-**index.html contains the apis and libraries which are being used.
+**index.html** contains the apis and libraries which are being used.
 
 css contains style.css which is the design of the app
 
@@ -50,5 +50,5 @@ js file contains 3 javascript files -> app.js for the layout of the tabs and dec
 
 lib -> contains all the ionic default libraries which we need
 
-templates --> the html pages for each tab are  contained here**
+templates --> the html pages for each tab are  contained here
 
