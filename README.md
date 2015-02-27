@@ -24,7 +24,7 @@ $ ionic upload
 Then, install Ionic View on your mobile phone, log in. Select your app, download, and view!
 
 ###Github
-1. Clone repo in a DIFFERENT folder.
+1. Clone repo in a DIFFERENT folder. $ git clone https://github.com/Parkinglot/parkinglot.git
 2. Update your folder to the latest version: git pull
 2. After creating your app (IN A DIFF FOLDER), replace the 3 folders with the ones in the repo.
 3. After making changes, copy changed file to repo folder.
