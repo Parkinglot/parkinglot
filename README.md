@@ -3,6 +3,7 @@
 IONIC: http://ionicframework.com/getting-started/
 
 How to run the app:
+
 1. IF YOU HAVE MAC: Install xCode to run iOS sim:
 $ cd myApp
 $ ionic platform add ios
