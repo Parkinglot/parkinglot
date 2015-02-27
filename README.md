@@ -18,8 +18,11 @@ $ ionic emulate ios
 
 2. IF YOU DONT: Sign up for Ionic account and view over browser:
 http://view.ionic.io/
+
 $ cd myApp
 $ ionic upload
+
+Then, install Ionic View on your mobile phone, log in. Select your app, download, and view!
 
 ###Github
 1. Clone repo in a DIFFERENT folder.
