@@ -1,5 +1,11 @@
 # parkinglot
 
+##Jobs
+1. Frontend: Bern
+2. Facebook API: Piku
+3. Backend: Shara
+
+##Get started!
 IONIC: http://ionicframework.com/getting-started/
 
 How to run the app:
