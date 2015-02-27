@@ -30,5 +30,5 @@ http://view.ionic.io/
 4. Commit your changes: git commit -m "your message"
 5. Push changes to github: git push -u origin master
 
-#Frontend
+##Frontend
 wht im doing
