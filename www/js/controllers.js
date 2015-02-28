@@ -3,9 +3,7 @@ angular.module('starter.controllers', [])
 //maps
 .controller('DashCtrl', function($scope, $ionicLoading) 
 {
-  console.log("DashCtrl");
   $scope.initialise = function() {
-    console.log("In Google.maps.event.addDomListener");
     var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
     var mapOptions = {
       center: myLatlng,
@@ -26,8 +24,31 @@ angular.module('starter.controllers', [])
 
     $scope.map = map;
   };
-
   google.maps.event.addDomListener(document.getElementById("map"), 'load', $scope.initialise());
+
+  $scope.centerOnMe = function() {
+    if(!$scope.map) {
+      return;
+    }
+
+    $scope.loading = $ionicLoading.show({
+      content: 'Getting current location...',
+      noBackdrop: false,
+      duration: 2000
+    });
+
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+
+      $ionicPopup.alert({
+        title: 'Success',
+        content: 'Hello!!!'
+      });
+      $scope.loading.hide();
+    }, function(error) {
+      alert('Unable to get location: ' + error.message);
+    });
+  };
 })
 
 

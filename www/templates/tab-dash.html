@@ -9,8 +9,12 @@
   </ion-content>
 </ion-view-->
 <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
-<ion-view view-title="Map1">
-    <ion-content ng-controller="DashCtrl">
+<ion-view view-title="Map">
+    <ion-content>
       <div id="map" data-tap-disabled="true"></div>
     </ion-content>
+
+    <ion-footer-bar class="bar-dark">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Warn the masses</a>
+    </ion-footer-bar>
 </ion-view>
