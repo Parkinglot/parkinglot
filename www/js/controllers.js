@@ -13,13 +13,33 @@ angular.module('starter.controllers', [])
     
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+    //Add markers
+    var icon = {
+            url: "img/profile.jpg", //url
+            scaledSize: new google.maps.Size(26, 26), //size
+            origin: new google.maps.Point(0,0), //origin
+            anchor: new google.maps.Point(0,29) //anchor 
+    };
+    var backicon = {
+            url: "img/pin.png", //url
+            scaledSize: new google.maps.Size(50, 55), //size
+            origin: new google.maps.Point(0,0), //origin
+            anchor: new google.maps.Point(12,28) //anchor 
+    };
+
     navigator.geolocation.getCurrentPosition(function(pos) {
         map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+        var backLocation = new google.maps.Marker({
+            position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+            map: map,
+            icon: backicon
+        });
         var myLocation = new google.maps.Marker({
             position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
             map: map,
-            title: "My Location"
+            icon: icon
         });
+        
     });
 
     $scope.map = map;
@@ -40,9 +60,8 @@ angular.module('starter.controllers', [])
     navigator.geolocation.getCurrentPosition(function(pos) {
       $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
 
-      $ionicPopup.alert({
-        title: 'Success'
-      });
+      $ionicPopup.alert({title: 'Success!', content:"You warned the masses"});
+
       $scope.loading.hide();
     }, function(error) {
       alert('Unable to get location: ' + error.message);
