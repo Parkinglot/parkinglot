@@ -14,9 +14,9 @@ angular.module('starter.controllers', [])
     
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var beaches = [
-      [ 40.890542, -88.274856, 4],
-      [ 40.923036, -88.259052, 5],
-      [ 40.028249, -88.157507, 3],
+      [40.890542, -88.274856, 4],
+      [40.923036, -88.259052, 5],
+      [40.028249, -88.157507, 3],
       [40.80010128657071, -88.28747820854187, 2],
       [40.950198, -88.259302, 1]
     ];
@@ -101,26 +101,7 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-//facebook
-.controller('FriendsCtrl', function($scope, Friends) {
-   $scope.fbLogin = function() {
-    openFB.login(
-        function(response) {
-            if (response.status === 'connected') {
-                $ionicPopup.alert({title: 'Facebook login success'});
-                $scope.closeLogin();
-            } else {
-                $ionicPopup.alert({ title: 'Facebook login failed'});
-            }
-        },
-        {scope: 'email,publish_actions'});
-  }
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
+//account settings
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

@@ -27,7 +27,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-   openFB.init({appId: '799003203519533'});
   $stateProvider
 
   // setup an abstract state for the tabs directive
@@ -64,25 +63,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
-        }
-      }
-    })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
         }
       }
     })
