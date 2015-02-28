@@ -35,3 +35,20 @@ wht im doing
 
 ##Facebook
 hello
+
+###Naming Structure
+
+**index.html** contains the apis and libraries which are being used.
+
+**css** contains **style.css** which is the design of the app
+
+**img** contains the app icon
+
+**js** file contains 3 javascript files -> **app.js** for the layout of the tabs and declarations and links to the htmls for those
+--> **controller.js** contains the implementation functions for the tabs
+-->**services.js** contains information (text, images etc) for stuff inside one of the tabs (?)
+
+**lib** -> contains all the ionic default libraries which we need
+
+**templates** --> the html pages for each tab are  contained here
+
