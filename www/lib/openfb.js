@@ -21,7 +21,7 @@ var openFB = (function () {
 
         baseURL = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + context,
 
-        oauthRedirectURL ="https://www.facebook.com/connect/login_success.html",
+        oauthRedirectURL ="https://www.facebook.com",
 
         logoutRedirectURL = baseURL + '/logoutcallback.html',
 
