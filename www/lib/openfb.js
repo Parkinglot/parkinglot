@@ -8,7 +8,7 @@
  * @version 0.4
  */
 var openFB = (function () {
-
+    
     var FB_LOGIN_URL = 'https://www.facebook.com/dialog/oauth',
         FB_LOGOUT_URL = 'https://www.facebook.com/logout.php',
 
@@ -21,16 +21,16 @@ var openFB = (function () {
 
         baseURL = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + context,
 
-        oauthRedirectURL = baseURL + '/oauthcallback.html',
+        oauthRedirectURL ="https://www.facebook.com/connect/login_success.html",
 
         logoutRedirectURL = baseURL + '/logoutcallback.html',
 
         // Because the OAuth login spans multiple processes, we need to keep the login callback function as a variable
         // inside the module instead of keeping it local within the login function.
         loginCallback,
-
-        // Indicates if the app is running inside Cordova
         runningInCordova,
+        // Indicates if the app is running inside Cordova
+        
 
         // Used in the exit event handler to identify if the login has already been processed elsewhere (in the oauthCallback function)
         loginProcessed;

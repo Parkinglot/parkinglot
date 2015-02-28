@@ -45,7 +45,19 @@ angular.module('starter.controllers', [])
 
 //facebook
 .controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
+   $scope.fbLogin = function() {
+    openFB.login(
+        function(response) {
+            if (response.status === 'connected') {
+                console.log('Facebook login succeeded');
+                $scope.closeLogin();
+            } else {
+                alert('Facebook login failed');
+            }
+        },
+        {scope: 'email,publish_actions'});
+}
+   $scope.friends = Friends.all();
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
