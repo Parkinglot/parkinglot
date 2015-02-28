@@ -4,6 +4,7 @@
 1. Frontend: Bern
 2. Facebook API: Piku
 3. Backend: Shara
+4. Graphics: Anne
 
 ##Get started!
 ###Using Ionic
