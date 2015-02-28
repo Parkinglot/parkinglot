@@ -4,6 +4,7 @@
 1. Frontend: Bern
 2. Facebook API: Piku
 3. Backend: Shara
+4. Graphics: Anne
 
 ##Get started!
 ###Using Ionic
@@ -29,12 +30,12 @@ http://view.ionic.io/
 3. After making changes, copy changed file to repo folder.
 4. Commit your changes: git commit -m "your message"
 5. Push changes to github: git push -u origin master
-
+6. "Please, commit your changes or stash them before you can merge." Just git reset --hard
 ##Frontend
 wht im doing
 
 ##Facebook
-hello
+added the openfb.js library and 2 other htmls for logging in. modified app.js and controller.js to include fblogin function and info. updated the index.html to include the fb api.
 
 ###Naming Structure
 
