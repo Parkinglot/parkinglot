@@ -35,7 +35,7 @@ http://view.ionic.io/
 wht im doing
 
 ##Facebook
-hello
+added the openfb.js library and 2 other htmls for logging in. modified app.js and controller.js to include fblogin function and info. updated the index.html to include the fb api.
 
 ###Naming Structure
 
