@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
 //maps
-.controller('DashCtrl', function($scope, $ionicLoading) 
+.controller('DashCtrl', function($scope, $ionicLoading, $ionicPopup) 
 {
   $scope.initialise = function() {
     var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
@@ -41,8 +41,7 @@ angular.module('starter.controllers', [])
       $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
 
       $ionicPopup.alert({
-        title: 'Success',
-        content: 'Hello!!!'
+        title: 'Success'
       });
       $scope.loading.hide();
     }, function(error) {
@@ -70,15 +69,14 @@ angular.module('starter.controllers', [])
     openFB.login(
         function(response) {
             if (response.status === 'connected') {
-                console.log('Facebook login succeeded');
+                $ionicPopup.alert({title: 'Facebook login success'});
                 $scope.closeLogin();
             } else {
-                alert('Facebook login failed');
+                $ionicPopup.alert({ title: 'Facebook login failed'});
             }
         },
         {scope: 'email,publish_actions'});
-}
-   $scope.friends = Friends.all();
+  }
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
