@@ -29,7 +29,7 @@ http://view.ionic.io/
 3. After making changes, copy changed file to repo folder.
 4. Commit your changes: git commit -m "your message"
 5. Push changes to github: git push -u origin master
-
+6. "Please, commit your changes or stash them before you can merge." Just git reset --hard
 ##Frontend
 wht im doing
 
