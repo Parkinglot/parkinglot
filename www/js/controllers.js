@@ -3,6 +3,7 @@ angular.module('starter.controllers', [])
 //maps
 .controller('DashCtrl', function($scope, $ionicLoading, $ionicPopup) 
 {
+  //start map
   $scope.initialise = function() {
     var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
     var mapOptions = {
@@ -22,11 +23,12 @@ angular.module('starter.controllers', [])
     };
     var backicon = {
             url: "img/pin.png", //url
-            scaledSize: new google.maps.Size(50, 55), //size
+            scaledSize: new google.maps.Size(50, 60), //size
             origin: new google.maps.Point(0,0), //origin
             anchor: new google.maps.Point(12,28) //anchor 
     };
 
+    //set current position
     navigator.geolocation.getCurrentPosition(function(pos) {
         map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
         var backLocation = new google.maps.Marker({
