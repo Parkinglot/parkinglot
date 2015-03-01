@@ -15,9 +15,26 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
+
+$positive:                         #00436d !default;
+$light:                            #9dc4dd !default;
+$stable:                           #053554 !default;
+$dark:                             #053554 !default;
+$calm:                             #1e856b !default;
+$balanced:                         #2fa084 !default;
+$energized:                        #ffe4b1 !default;
+$assertive:                        #98002e !default;
+$royal:                            #750023 !default;
+
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.tab-item {
+   color: energized;
+   opacity: 1;
+}
