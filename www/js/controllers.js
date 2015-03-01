@@ -90,7 +90,7 @@ angular.module('starter.controllers', [])
             map: map,
             icon: selficon
         });
-       var contentString2 = '<div id="content">'+
+       var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Hello, I trigged this marker!</b></h5>'+
@@ -98,37 +98,78 @@ angular.module('starter.controllers', [])
       '<img src="img/profile.jpg" width=180 height=240'+
       '</div>'+
       '</div>';//selficon
-      var contentString = '<div id="content">'+
+      var park1 = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Parking available here!</b></h5>'+
-      '<div id="bodyContent">'+'<p>Latitude : </p>'+pos.coords.latitude+'<br> </br></p>Longitude : </p>'+pos.coords.longitude+ '<br> </br>'+
+      '<div id="bodyContent">'+'<p>Latitude : 40.123803</p><br> </br></p>Longitude : -88.2209157</p><br> </br>'+
       '</div>'+
       '</div>';//parking
+      var park2 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Parking available here!</b></h5>'+
+      '<div id="bodyContent">'+'<p>Latitude : 40.103803</p><br> </br></p>Longitude : -88.2289157</p><br> </br>'+
+      '</div>'+
+      '</div>';//parking
+      var park3 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Parking available here!</b></h5>'+
+      '<div id="bodyContent">'+'<p>Latitude : 40.115803</p><br> </br></p>Longitude : -88.2239157</p><br> </br>'+
+      '</div>'+
+      '</div>';//parking
+      var park4 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Parking available here!</b></h5>'+
+      '<div id="bodyContent">'+'<p>Latitude : 40.116803</p><br> </br></p>Longitude : -88.2229157</p><br> </br>'+
+      '</div>'+
+      '</div>';//parking
+      var park5 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Parking available here!</b></h5>'+
+      '<div id="bodyContent">'+'<p>Latitude : 40.117803</p><br> </br></p>Longitude : -88.2219157</p><br> </br>'+
+      '</div>'+
+      '</div>';//parking
+      
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
+      var infowindow1 = new google.maps.InfoWindow({
+        content: park1
+      });
       var infowindow2 = new google.maps.InfoWindow({
-        content: contentString2
+        content: park2
+      });
+      var infowindow3 = new google.maps.InfoWindow({
+        content: park3
+      });
+      var infowindow4 = new google.maps.InfoWindow({
+        content: park4
+      });
+      var infowindow5 = new google.maps.InfoWindow({
+        content: park5
       });
       google.maps.event.addListener(myLocation, 'click', function() {
-        infowindow2.open(map,myLocation);
-      });
-      google.maps.event.addListener(mark[1], 'click', function() {
-        infowindow.open(map,mark[1]);
-      });
-      google.maps.event.addListener(mark[2], 'click', function() {
-        infowindow.open(map,mark[2]);
+        infowindow.open(map,myLocation);
       });
       google.maps.event.addListener(mark[0], 'click', function() {
-        infowindow.open(map,mark[0]);
+        infowindow1.open(map,mark[0]);
+      });
+      google.maps.event.addListener(mark[1], 'click', function() {
+        infowindow2.open(map,mark[1]);
+      });
+      google.maps.event.addListener(mark[2], 'click', function() {
+        infowindow3.open(map,mark[2]);
       });
       google.maps.event.addListener(mark[3], 'click', function() {
-        infowindow.open(map,mark[3]);
+        infowindow4.open(map,mark[3]);
       });
       google.maps.event.addListener(mark[4], 'click', function() {
-        infowindow.open(map,mark[4]);
-      });  
+        infowindow5.open(map,mark[4]);
+      }); 
     });
    
     $scope.map = map;
