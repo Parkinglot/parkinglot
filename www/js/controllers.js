@@ -197,6 +197,27 @@ angular.module('starter.controllers', [])
       alert('Unable to get location: ' + error.message);
     });
   };
+   $scope.parking = function() {
+    if(!$scope.map) {
+      return;
+    }
+
+    $scope.loading = $ionicLoading.show({
+      content: 'Getting current location...',
+      noBackdrop: false,
+      duration: 2000
+    });
+
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+
+      $ionicPopup.alert({title: 'Success!', content:"Thank you for donating time"});
+
+      $scope.loading.hide();
+    }, function(error) {
+      alert('Unable to get location: ' + error.message);
+    });
+  };
 })
 
 //account settings
