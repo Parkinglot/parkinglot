@@ -21,9 +21,9 @@ var openFB = (function () {
 
         baseURL = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + context,
 
-        oauthRedirectURL ="https://www.facebook.com",
+        oauthRedirectURL ='http://web.engr.illinois.edu/~blim7/logoutcallback.html',
 
-        logoutRedirectURL = baseURL + '/logoutcallback.html',
+        logoutRedirectURL = 'http://localhost:8100/#/tab/dash',
 
         // Because the OAuth login spans multiple processes, we need to keep the login callback function as a variable
         // inside the module instead of keeping it local within the login function.

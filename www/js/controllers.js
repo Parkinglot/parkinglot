@@ -34,14 +34,14 @@ angular.module('starter.controllers', [])
             anchor: new google.maps.Point(15,40) //anchor 
     };
     var selficon = {
-            url: "img/images.jpg", //url
-            scaledSize: new google.maps.Size(26, 26), //size
+            url: "img/images2.png", //url
+            scaledSize: new google.maps.Size(22, 38), //size
             origin: new google.maps.Point(0,0), //origin
             anchor: new google.maps.Point(15,40) //anchor 
     };//for curr position
     var parkicon = {
             url: "img/images.png", //url
-            scaledSize: new google.maps.Size(30, 30), //size
+            scaledSize: new google.maps.Size(26, 38), //size
             origin: new google.maps.Point(0,0), //origin
             anchor: new google.maps.Point(12,28) //anchor 
     };
@@ -158,19 +158,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-
-//chats
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
 //account settings
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
@@ -183,9 +170,21 @@ angular.module('starter.controllers', [])
                 console.log('Facebook login succeeded');
                 $scope.closeLogin();
             } else {
+              $scope.closeLogin();
                 alert('Facebook login failed');
             }
         },
-        {scope: 'email,publish_actions'});
+        {scope: 'email'});
 }
+
+$scope.fbLogout=function(){
+    openFB.logout(
+      function() {
+          $state.go('login');
+      },
+      errorHandler);
+    localStorage.clear();
+    sessionStorage.clear();
+  }
+
 });
