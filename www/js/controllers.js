@@ -14,17 +14,36 @@ angular.module('starter.controllers', [])
     
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var beaches = [
-      [40.890542, -88.274856, 4],
-      [40.923036, -88.259052, 5],
-      [40.028249, -88.157507, 3],
-      [40.80010128657071, -88.28747820854187, 2],
-      [40.950198, -88.259302, 1]
+      [40.113803,-88.2259157, 4],
+      [40.113803,-88.2269157, 5],
+      [40.114803,-88.2249157, 3],
+      [40.115803,-88.2249157, 2],
+      [40.115803,-88.2269157, 1]
+    ];
+    var park = [
+      [40.123803,-88.2209157, 4],
+      [40.103803,-88.2289157, 5],
+      [40.115803,-88.2239157, 3],
+      [40.116803,-88.2229157, 2],
+      [40.117803,-88.2219157, 1]
     ];
     var icon = {
             url: "img/profile.jpg", //url
             scaledSize: new google.maps.Size(26, 26), //size
             origin: new google.maps.Point(0,0), //origin
-            anchor: new google.maps.Point(0,29) //anchor 
+            anchor: new google.maps.Point(15,40) //anchor 
+    };
+    var selficon = {
+            url: "img/images.jpg", //url
+            scaledSize: new google.maps.Size(26, 26), //size
+            origin: new google.maps.Point(0,0), //origin
+            anchor: new google.maps.Point(15,40) //anchor 
+    };//for curr position
+    var parkicon = {
+            url: "img/images.png", //url
+            scaledSize: new google.maps.Size(30, 30), //size
+            origin: new google.maps.Point(0,0), //origin
+            anchor: new google.maps.Point(12,28) //anchor 
     };
     for (var i = 0; i < beaches.length; i++) 
     {
@@ -33,10 +52,23 @@ angular.module('starter.controllers', [])
       var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          icon: icon,
+          //icon: backicon,
           zIndex: beach[2]
       });
     }
+    var mark = new Array(park.length);
+    for (var i = 0; i < park.length; i++) 
+    {
+      var p = park[i];
+      var myLatLng = new google.maps.LatLng(p[0], p[1]);
+       mark[i] = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: parkicon,
+        zIndex: p[2]
+      });
+    }
+    
     var backicon = {
             url: "img/pin.png", //url
             scaledSize: new google.maps.Size(50, 60), //size
@@ -50,17 +82,55 @@ angular.module('starter.controllers', [])
         map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
         var backLocation = new google.maps.Marker({
             position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-            map: map,
-            icon: backicon
+            map: map
+          //  icon: backicon
         });
         var myLocation = new google.maps.Marker({
             position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
             map: map,
-            icon: icon
+            icon: selficon
         });
-        
+       var contentString2 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Hello, I trigged this marker!</b></h5>'+
+      '<div id="bodyContent">'+'<p>Latitude : </p>'+pos.coords.latitude+'<br> </br></p>Longitude : </p>'+pos.coords.longitude+ '<br> </br>'+
+      '<img src="img/profile.jpg" width=180 height=240'+
+      '</div>'+
+      '</div>';//selficon
+      var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading" style= "font-family:Verdana;"><b>Parking available here!</b></h5>'+
+      '<div id="bodyContent">'+'<p>Latitude : </p>'+pos.coords.latitude+'<br> </br></p>Longitude : </p>'+pos.coords.longitude+ '<br> </br>'+
+      '</div>'+
+      '</div>';//parking
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      var infowindow2 = new google.maps.InfoWindow({
+        content: contentString2
+      });
+      google.maps.event.addListener(myLocation, 'click', function() {
+        infowindow2.open(map,myLocation);
+      });
+      google.maps.event.addListener(mark[1], 'click', function() {
+        infowindow.open(map,mark[1]);
+      });
+      google.maps.event.addListener(mark[2], 'click', function() {
+        infowindow.open(map,mark[2]);
+      });
+      google.maps.event.addListener(mark[0], 'click', function() {
+        infowindow.open(map,mark[0]);
+      });
+      google.maps.event.addListener(mark[3], 'click', function() {
+        infowindow.open(map,mark[3]);
+      });
+      google.maps.event.addListener(mark[4], 'click', function() {
+        infowindow.open(map,mark[4]);
+      });  
     });
-
+   
     $scope.map = map;
   };
   google.maps.event.addDomListener(document.getElementById("map"), 'load', $scope.initialise());
