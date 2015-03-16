@@ -1,4 +1,19 @@
-# parkinglot
+# Freed
+##aka Parking Lot
+
+![alt tag](https://github.com/Parkinglot/parkinglot/blob/master/www/img/images.png)
+
+Driving is fun, parking is not. Especially all the stress that comes with it. Even after finding parking, we have to fuss over the right amount of coins to add to our parking meter, and whether parking attendants will do their rounds at the wrong time. Wouldn't you want to be freed of all your worries once and for all?
+
+Freed seeks to help accomplish exactly that, by giving power back to the people.
+
+Crowdsource parking, beat the clock, beat the odds
+
+Around the world, thousands, if not millions, of dollars are being wasted every day when drivers leave their parking lots early. Why not pay the favor forward? Users that leave their parking lots early will be able to indicate on the interactive map, allowing others to easily find parking lots, and some extra time as a bonus.
+
+We fear what we cannot predict, and parking attendants have to take one of the top few spots in that list. If you see a parking attendant on the streets, a single click on Freed notifies all users immediately. Many fantastic dates have been ruined by constant sweating over whether one's car is safe from the dreaded ticket. Freed gives you that confidence, with a community of watchful users that will safeguard your car, and secure your date.
+
+This app was built with the belief that graciousness is alive and well. We hope to build a community of users that actually care for each other, and to say, **"I'll watch your back, cause you will watch mine."**
 
 ##Jobs
 1. Frontend: Bern
