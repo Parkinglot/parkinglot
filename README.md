@@ -3,11 +3,11 @@
 
 ![alt tag](https://github.com/Parkinglot/parkinglot/blob/master/www/img/images.png)
 
-![alt tag](http://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/221/742/datas/gallery.jpg)
-
 Driving is fun, parking is not. Especially all the stress that comes with it. Even after finding parking, we have to fuss over the right amount of coins to add to our parking meter, and whether parking attendants will do their rounds at the wrong time. Wouldn't you want to be freed of all your worries once and for all?
 
 Freed seeks to help accomplish exactly that, by giving power back to the people.
+
+![alt tag](http://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/221/742/datas/gallery.jpg)
 
 Crowdsource parking, beat the clock, beat the odds
 
